@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: api-gateway
+
+server:
+  port: 8080
+
+zuul:
+  ribbon:
+    eager-load:
+      enabled: true
+  retryable: true
+  prefix: /api
+  routes:
+    HELLO-SERVICE:
+      path: /**/helloservice/**
+      service-id: helloService-svc
+      strip-prefix: false
+    HELP-SERVICE:
+      path: /**/helpservice/**
+      service-id: helpService-svc
+      strip-prefix: false
+      
+logging:
+  pattern: 
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
