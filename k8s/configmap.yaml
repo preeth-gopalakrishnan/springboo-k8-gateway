@@ -1,0 +1,22 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: api-gateway
+data:
+  application.yaml: |-
+    zuul:
+      ribbon:
+        eager-load:
+          enabled: true
+      retryable: true
+      prefix: /api
+      routes:
+        HELLO-SERVICE:
+          path: /**/helloservice/**
+          service-id: helloService-svc
+          strip-prefix: false
+        HELP-SERVICE:
+          path: /**/helpservice/**
+          service-id: helpService-svc
+          strip-prefix: false
+      
