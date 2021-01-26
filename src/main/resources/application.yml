@@ -13,11 +13,11 @@ zuul:
   prefix: /api
   routes:
     HELLO-SERVICE:
-      path: /**/helloservice/**
+      path: /helloservice/**
       service-id: helloservice-svc
       strip-prefix: false
     HELP-SERVICE:
-      path: /**/helpservice/**
+      path: /helpservice/**
       service-id: helpservice-svc
       strip-prefix: false
       
