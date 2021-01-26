@@ -14,11 +14,11 @@ zuul:
   routes:
     HELLO-SERVICE:
       path: /**/helloservice/**
-      service-id: helloService-svc
+      service-id: helloservice-svc
       strip-prefix: false
     HELP-SERVICE:
       path: /**/helpservice/**
-      service-id: helpService-svc
+      service-id: helpservice-svc
       strip-prefix: false
       
 logging:

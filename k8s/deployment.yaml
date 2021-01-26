@@ -21,15 +21,15 @@ spec:
         readinessProbe:
           httpGet:
             path: /actuator/health
-            port: 8081
-          initialDelaySeconds: 3
+            port: 8080
+          initialDelaySeconds: 10
           periodSeconds: 2
           failureThreshold: 3
         livenessProbe:
           httpGet:
             path: /actuator/health
-            port: 8081
-          initialDelaySeconds: 5
+            port: 8080
+          initialDelaySeconds: 10
           periodSeconds: 5
           failureThreshold: 3
 ---
