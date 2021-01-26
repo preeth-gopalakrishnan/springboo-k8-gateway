@@ -12,11 +12,11 @@ data:
       prefix: /api
       routes:
         HELLO-SERVICE:
-          path: /**/helloservice/**
-          service-id: helloservice-svc
+          path: /greet/**
+          serviceId: helloservice-svc
           strip-prefix: false
         HELP-SERVICE:
-          path: /**/helpservice/**
-          service-id: helpservice-svc
+          path: /request/**
+          serviceId: helpservice-svc
           strip-prefix: false
       

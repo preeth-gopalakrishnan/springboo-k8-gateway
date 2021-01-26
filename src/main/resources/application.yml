@@ -13,18 +13,22 @@ zuul:
   prefix: /api
   routes:
     HELLO-SERVICE:
-      path: /helloservice/**
-      service-id: helloservice-svc
-      strip-prefix: false
+      path: /greet/**
+      serviceId: helloservice-svc
+      strip-prefix: true
     HELP-SERVICE:
-      path: /helpservice/**
-      service-id: helpservice-svc
-      strip-prefix: false
+      path: /request/**
+      serviceId: helpservice-svc
+      strip-prefix: true
       
 logging:
   pattern: 
     console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
-
+  level:
+    org:
+      apache:
+        http:
+          wire: debug
 management:
   endpoints:
     web:
